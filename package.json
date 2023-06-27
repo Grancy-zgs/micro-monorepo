@@ -1,0 +1,40 @@
+{
+  "name": "micro-monorepo",
+  "version": "1.0.0",
+  "description": "micro-app 案例",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "bootstrap": "yarn && npm-run-all --serial install:*",
+    "install:main-vite-vue3": "cd main-vite-vue3 && run start",
+    "install:child-vite-vue3": "cd child_apps/vite-vue3 && pnpm run",
+    "install:child-vue3": "cd child_apps/vue3 && pnpm run",
+    "dev:main-vite": "pnpm --filter \"@micro-monorepo/*\" -r --stream run dev",
+    "dev-main:vite": "cd packages/apps/main-vite-vue3 && pnpm run dev",
+    "dev-child:vite": "cd packages/apps/child_apps/vite-app && pnpm run dev",
+    "dev-child:vue3": "cd packages/apps/child_apps/vue3-app && pnpm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grancy-zgs/micro-monorepo"
+  },
+  "keywords": [
+    "micro-app",
+    "demo"
+  ],
+  "author": "zhou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Grancy-zgs/micro-monorepo/issues"
+  },
+  "homepage": "https://github.com/Grancy-zgs/micro-monorepo#README",
+  "dependencies": {
+    "@micro-zoe/micro-app": "1.0.0-beta.5",
+    "element-plus": "^2.3.7"
+  },
+  "devDependencies": {
+    "cross-env": "~7.0.3",
+    "express": "~4.17.1"
+  }
+}
